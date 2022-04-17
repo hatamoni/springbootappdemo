@@ -15,13 +15,10 @@ pipeline {
       post {
         always {
              junit '**/target/surefire-reports/TEST-*.xml'
+             mail bcc: '', body: 'Mail from Jenkins huuhuuu', cc: '', from: '', replyTo: '', subject: 'Build Successful', to: 'jenkins@jenkins.master.hix'
+             
         }
       }
     }
-    post {
-        always {
-             mail bcc: '', body: 'Mail from Jenkins huuhuuu', cc: '', from: '', replyTo: '', subject: 'Build Successful', to: 'jenkins@jenkins.master.hix'
-        }
-      }
   }
 }
