@@ -16,7 +16,7 @@ pipeline {
         always {
              junit '**/target/surefire-reports/TEST-*.xml'
              mail bcc: '', body: 'Mail from Jenkins huuhuuu', cc: '', from: '', replyTo: '', subject: 'Build Successful', to: 'jenkins@jenkins.master.hix'
-             
+             slackSend channel: 'devopsdemo', message: 'Build successful', teamDomain: 'hibrahimworkspace', tokenCredentialId: 'Slack'
         }
       }
     }
