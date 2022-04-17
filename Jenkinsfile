@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        git 'https://github.com/hatamoni/springbootappdemo.git'
         sh 'mvn clean compile'
       }
     }
